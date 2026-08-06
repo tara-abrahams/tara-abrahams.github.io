@@ -393,7 +393,7 @@
          Each item shows a headline, short summary, photos, and an inline expandable full text.
 
          TO REPLACE A SAMPLE ITEM with one of your real pieces:
-           1. Find the item below (<!-- WORK ITEM 1 -->, etc.)
+           1. Find the item below (look for the "WORK ITEM 1" comment marker, etc.)
            2. Replace REPLACE_HEADLINE_HERE with your story headline.
            3. Replace REPLACE_SUMMARY_HERE with a 2-3 sentence summary.
            4. In the images section:
@@ -404,13 +404,13 @@
               - Duplicate image wrappers if you have 3 photos.
            5. Replace REPLACE_FULL_TEXT_HERE with your article text.
               Put each paragraph in its own <p> tag.
-           6. You can add more items by copying an entire <!-- WORK ITEM --> block.
+           6. You can add more items by copying an entire "WORK ITEM" comment block.
 
          NOTE: Only WORK ITEM 1 is currently visible on the live page, so the
          section doesn't look unfinished with several empty placeholder cards.
-         WORK ITEMS 2–10 are commented out below as ready-to-use templates —
-         uncomment each one (remove the <!-- and --> wrapping it) as you add
-         real stories, following the same pattern as Item 1.
+         WORK ITEMS 2 through 10 are commented out below as ready-to-use
+         templates — uncomment each one (delete the HTML comment markers
+         wrapping it) as you add real stories, following the same pattern as Item 1.
     -->
     <section id="selected-work" aria-labelledby="work-heading">
       <div class="container container--wide">
@@ -477,8 +477,8 @@
 
           <!-- ===================================================
                WORK ITEM 2 (commented out — this is a ready-to-use template)
-               To activate: delete the "<!--" line right below and the
-               closing "-->" line at the end of this block, then replace
+               To activate: delete the comment-open line right below and the
+               comment-close line at the end of this block, then replace
                the REPLACE_* placeholders following the Item 1 pattern above.
                =================================================== -->
           <!--
