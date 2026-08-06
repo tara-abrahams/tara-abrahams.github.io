@@ -33,10 +33,11 @@ taraabrahams.github.io/
 ## How to Update Each Section
 
 ### Contact info (email + LinkedIn)
-Open `index.html` and search for:
-- `YOUR_EMAIL_HERE` — replace both instances with your actual email.
-- `YOUR_LINKEDIN_URL_HERE` — replace with your full LinkedIn URL (e.g. `https://linkedin.com/in/tara-abrahams`).
-- Also update the displayed value `linkedin.com/in/taraabrahams` to match.
+Already filled in with `tara.rose.abrahams@gmail.com` and
+`https://www.linkedin.com/in/tararoseabrahams/`. To change either one later,
+open `index.html`, search for the `<!-- *** EDIT: Public email address` and
+`<!-- *** EDIT: LinkedIn profile URL` comments in the Contact section, and
+update both the link (`href`) and the displayed text right below it.
 
 ### CV / Resume PDF
 1. Export your updated CV as a PDF.
@@ -56,11 +57,18 @@ Update the bullet lists, dissertation card text, publications, and teaching entr
 
 ## Adding Your Selected Work (Air Force stories)
 
-The Selected Work section contains 3 sample entries with placeholder text.
+The Selected Work section contains one visible sample entry with placeholder text.
+
+Only **Item 1** is currently visible on the live page (so the section doesn't
+look unfinished with several empty cards). Items 2–10 are commented out in
+`index.html` as ready-to-use templates — same headline/summary/photos/expand
+pattern as Item 1.
 
 **For each story you want to add:**
 
-1. Find the item in `index.html` (look for `<!-- WORK ITEM 1 -->`, `<!-- WORK ITEM 2 -->`, etc.)
+1. Find the item in `index.html` (look for `<!-- WORK ITEM 1 -->`, `<!-- WORK ITEM 2 -->`, etc.).
+   For items 2 and up, delete the `<!--` line right below the item's comment
+   header and the closing `-->` line at the end of the block to make it visible.
 2. Replace the following placeholders:
    - `REPLACE_HEADLINE_HERE` → your story headline
    - `REPLACE_SUMMARY_HERE` → 2–3 sentence summary of the story
@@ -71,9 +79,9 @@ The Selected Work section contains 3 sample entries with placeholder text.
 
 3. Add your photo to the `/assets/` folder.
 
-**To add items 4–10:**
-Scroll to the bottom of the `<!-- WORK ITEMS 4–10 -->` comment in `index.html`.
-Copy the commented-out template block, uncomment it, and update the number and content.
+**To add items beyond 10:**
+Copy any existing `<!-- WORK ITEM --> ... </article>` block, paste it at the
+end of `.work-list`, and update its number and `work-body-N` id.
 
 ---
 
@@ -92,8 +100,28 @@ When you're ready to add more content:
 
 - **Publications & Presentations** — fill in the Research card marked with `placeholder-inline` text.
 - **Teaching** — fill in the Teaching card the same way.
-- **More Selected Work items** — follow the template above to add items 4–10.
+- **CV PDF** — export your CV as a PDF, name it `cv-tara-abrahams.pdf`, and drop it in `/assets/`. The download button on the CV page will pick it up automatically once the file exists.
+- **More Selected Work items** — uncomment and fill in items 2–10 as described above.
 - **Projects section** — add a new `<section>` following the same pattern as an existing section.
+
+## Notes on recent revisions
+
+This site was audited and revised for hiring-focused impact (research +
+communications roles, Trust & Safety-adjacent but not T&S-only):
+
+- Homepage intro tightened to lead with the PhD/research identity.
+- About bio rewritten with civilian-friendly, past-tense military language
+  (public affairs specialist, full separation, no ongoing obligations).
+- The old "Trust & Safety note" highlighted box was removed from About and
+  folded into one plain sentence at the end of the bio, and a matching plain
+  sentence was added to Research — both mention T&S alongside UX/behavior
+  research and research-informed communications generally, so the site
+  doesn't read as a single-purpose T&S pitch.
+- Selected Work trimmed to one visible example item with items 2–10 kept as
+  ready-to-use commented templates (see above), and photo height reduced
+  slightly so this section doesn't visually outweigh Research/CV.
+- CV page: Master's entry and Air Force entry filled in with real details.
+- Contact section: email and LinkedIn are live.
 
 ---
 

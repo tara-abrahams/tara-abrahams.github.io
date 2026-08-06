@@ -688,20 +688,10 @@ section {
   margin-bottom: 0;
 }
 
-.trust-safety-note {
-  margin-top: var(--space-8);
-  padding: var(--space-5) var(--space-6);
-  background-color: var(--color-primary-subtle);
-  border-left: 3px solid var(--color-primary);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-}
-
-.trust-safety-note p {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  line-height: 1.65;
-  max-width: 60ch;
-}
+/* Industry-relevance sentence at the end of the About bio.
+   Kept as plain text (not a highlighted box) so it doesn't visually
+   overweight any single industry angle — see .research-industry-note
+   below for the matching treatment in the Research section. */
 
 /* ============================================================
    8. RESEARCH SECTION
@@ -785,6 +775,16 @@ section {
   .research-card--span2 {
     grid-column: span 2;
   }
+}
+
+/* One-sentence note linking Research to industry roles — plain text,
+   same weight as .work-intro, so it doesn't read as a T&S-only pitch. */
+.research-industry-note {
+  margin-top: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 62ch;
 }
 
 .placeholder-inline {
@@ -917,7 +917,8 @@ section {
 
 .work-image-wrap img {
   width: 100%;
-  height: 220px;
+  height: 190px; /* slightly shorter than a typical card image so this
+                     section reads as supporting evidence, not the main event */
   object-fit: cover;
   border-radius: var(--radius-md);
   background-color: var(--color-surface-dynamic);
