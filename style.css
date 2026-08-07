@@ -777,6 +777,56 @@ section {
   }
 }
 
+/* Prominent / lead card (used for the Dissertation card) — a restrained left
+   accent border, not a heavy background fill, so it reads as "lead item"
+   without breaking the editorial visual direction. */
+.research-card--featured {
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Subheadings used inside a research card to separate subsections
+   (e.g. Publications / Presentations, Selected Recognition / Affiliations) */
+.research-subheading {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+}
+
+/* Publications & Presentations list — slightly more open line-height than
+   the default research-card ul since entries are full citations. */
+.pub-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pub-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+  max-width: 72ch;
+}
+
+.pub-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pub-list li a {
+  word-break: break-word;
+}
+
+.pub-list-note {
+  display: block;
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--color-text-faint);
+  margin-top: var(--space-1);
+}
+
 /* One-sentence note linking Research to industry roles — plain text,
    same weight as .work-intro, so it doesn't read as a T&S-only pitch. */
 .research-industry-note {
@@ -949,6 +999,43 @@ section {
   margin-bottom: 0;
 }
 
+/* Pull quote — used in text-led work items in place of a photo gallery */
+.work-pull-quote {
+  margin: 0;
+  padding: var(--space-5) var(--space-6) 0;
+  border: none;
+}
+
+.work-pull-quote::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-primary);
+  opacity: 0.5;
+  margin-bottom: var(--space-4);
+}
+
+.work-pull-quote {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.4;
+  max-width: 60ch;
+}
+
+/* Optional source / Internet Archive link at the end of a work item */
+.work-source-link {
+  padding: 0 var(--space-6) var(--space-6);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.work-source-link a {
+  word-break: break-word;
+}
+
 /* ============================================================
    10. CV SECTION
    ============================================================ */
@@ -1059,6 +1146,21 @@ section {
   grid-column: 1 / -1;
   margin-top: var(--space-2);
   max-width: 60ch;
+}
+
+/* Bulleted list used within a cv-entry-desc (e.g. Wiley bullets, Honors list) */
+.cv-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.cv-list li {
+  margin-bottom: var(--space-1);
+}
+
+.cv-list li:last-child {
+  margin-bottom: 0;
 }
 
 /* ============================================================
