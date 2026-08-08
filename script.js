@@ -79,6 +79,9 @@
       mobileNav.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen);
       hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      // Lock background scroll while the mobile menu is open so page content
+      // can't shift or show through underneath the open menu panel.
+      document.body.classList.toggle('mobile-nav-open', isOpen);
     });
 
     // Close mobile nav when a link is clicked
@@ -88,6 +91,7 @@
         mobileNav.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.setAttribute('aria-label', 'Open menu');
+        document.body.classList.remove('mobile-nav-open');
       });
     });
   }

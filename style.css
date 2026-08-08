@@ -348,13 +348,24 @@ section {
   line-height: 1.2;
 }
 
-.logo-name span {
+.logo-descriptor {
   display: block;
   font-family: var(--font-body);
   font-size: var(--text-xs);
   font-weight: 400;
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
+}
+
+/* MOBILE HEADER SIMPLIFICATION
+   On small screens the sticky header is trimmed down to just:
+     - logo/monogram + name on the left (descriptor hidden)
+     - theme toggle + menu button on the right
+   This keeps the compact header from feeling cramped. */
+@media (max-width: 700px) {
+  .logo-descriptor {
+    display: none;
+  }
 }
 
 .site-nav {
@@ -443,6 +454,20 @@ section {
   border-top: 1px solid var(--color-divider);
   background-color: var(--color-bg);
   gap: var(--space-1);
+  /* Keep the open menu as a clean, self-contained panel that never overlaps
+     page content below it: capped height + its own scroll if the list is
+     ever taller than the viewport, plus a shadow for clear separation. */
+  position: relative;
+  z-index: 100;
+  max-height: calc(100dvh - 64px);
+  overflow-y: auto;
+  box-shadow: var(--shadow-md);
+}
+
+/* While the mobile menu is open, lock background scroll so the page behind
+   it can't shift or peek through underneath the menu panel. */
+body.mobile-nav-open {
+  overflow: hidden;
 }
 
 .mobile-nav a {
@@ -628,6 +653,15 @@ section {
   top: calc(64px + var(--space-8));
 }
 
+@media (max-width: 700px) {
+  /* Disable sticky positioning in the single-column mobile layout so the
+     aside can never sit on top of / overlap the bio text below it. */
+  .about-aside {
+    position: static;
+    top: auto;
+  }
+}
+
 .headshot-wrap {
   width: 100%;
   max-width: 240px;
@@ -653,6 +687,13 @@ section {
   align-items: center;
   justify-content: center;
   color: var(--color-text-faint);
+}
+
+/* No headshot has been supplied yet — hide the box entirely rather than
+   showing an empty placeholder. Remove this class in the HTML once a real
+   headshot image is added (see the comment above .headshot-wrap in index.html). */
+.headshot-wrap--empty {
+  display: none;
 }
 
 .about-quick-links {
@@ -697,11 +738,21 @@ section {
    8. RESEARCH SECTION
    ============================================================ */
 
+/* Explicit 2-column grid (rather than auto-fill) so the two non-"wide" cards
+   (Research Interests, Methods & Approach) always pair up as two clean,
+   evenly-filled columns instead of floating in unused grid tracks on wide
+   screens. Full-width cards use .research-card--wide to span both columns. */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
   margin-top: var(--space-2);
+}
+
+@media (max-width: 880px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .research-card {
@@ -861,7 +912,7 @@ section {
 .work-intro {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
-  max-width: 56ch;
+  max-width: 70ch;
   line-height: 1.65;
   margin-bottom: var(--space-10);
 }
@@ -899,6 +950,20 @@ section {
   flex: 1;
 }
 
+/* Text-only card content wrapper (current Selected Work markup) — replaces
+   the old expand/collapse .work-item-header for entries that are simple,
+   static cards without a photo gallery or expandable body. */
+.work-item-content {
+  padding: var(--space-6);
+}
+
+.work-item-details {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-3);
+  font-weight: 500;
+}
+
 .work-item-number {
   font-family: var(--font-body);
   font-size: var(--text-xs);
@@ -921,7 +986,7 @@ section {
   font-size: var(--text-sm);
   line-height: 1.65;
   color: var(--color-text-muted);
-  max-width: 62ch;
+  max-width: 72ch;
 }
 
 .work-expand-btn {
