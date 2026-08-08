@@ -950,13 +950,6 @@ body.mobile-nav-open {
   flex: 1;
 }
 
-/* Text-only card content wrapper (current Selected Work markup) — replaces
-   the old expand/collapse .work-item-header for entries that are simple,
-   static cards without a photo gallery or expandable body. */
-.work-item-content {
-  padding: var(--space-6);
-}
-
 .work-item-details {
   font-size: var(--text-xs);
   color: var(--color-text-faint);
