@@ -1041,6 +1041,39 @@ body.mobile-nav-open {
   max-width: 100%;
 }
 
+/* Inline article photos — full-width figures placed directly within the
+   flowing article text (distinct from the .work-item-images side-gallery
+   above, which is reserved for entries without inline photo placement). */
+.work-item-photo {
+  margin: var(--space-6) 0;
+}
+
+.work-item-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-dynamic);
+}
+
+.work-item-photo figcaption {
+  margin-top: var(--space-3);
+}
+
+.work-item-photo-caption {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.work-item-photo-credit {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  line-height: 1.4;
+  margin: var(--space-1) 0 0;
+}
+
 .work-item-text {
   padding: var(--space-6);
 }
