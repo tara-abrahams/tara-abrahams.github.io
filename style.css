@@ -1044,10 +1044,12 @@ body.mobile-nav-open {
 /* Inline article photos — editorial-width figures (roughly 78% of the
    article text column, capped at 50ch) placed directly within the flowing
    article text (distinct from the .work-item-images side-gallery above,
-   which is reserved for entries without inline photo placement). Captions
-   sit below a thin divider as a distinct editorial caption block: italic
-   muted caption, then a smaller non-italic credit/VIRIN line. On narrow
-   viewports figures expand to the full article width. */
+   which is reserved for entries without inline photo placement). The
+   image and its caption panel form one cohesive figure block: a soft
+   neutral panel sits directly beneath the photo (separated by a subtle
+   divider) holding a smaller italic caption and an even smaller,
+   uppercase, muted credit/VIRIN line. On narrow viewports figures expand
+   to the full article width. */
 .work-item-photo {
   width: 78%;
   max-width: 50ch;
@@ -1058,31 +1060,34 @@ body.mobile-nav-open {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   background-color: var(--color-surface-dynamic);
 }
 
 .work-item-photo figcaption {
-  margin-top: var(--space-3);
-  padding-top: var(--space-2);
+  margin-top: 0;
+  padding: 0.875rem 1rem;
+  background-color: var(--color-surface-offset);
   border-top: 1px solid var(--color-divider);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 .work-item-photo-caption {
-  font-size: var(--text-xs);
+  font-size: calc(var(--text-base) * 0.86);
   font-style: italic;
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: 1.45;
   margin: 0;
 }
 
 .work-item-photo-credit {
-  font-size: 0.6875rem;
+  font-size: max(0.75rem, calc(var(--text-base) * 0.72));
   font-style: normal;
+  text-transform: uppercase;
   color: var(--color-text-faint);
-  line-height: 1.35;
-  letter-spacing: 0.02em;
-  margin: var(--space-1) 0 0;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  margin: var(--space-2) 0 0;
 }
 
 @media (max-width: 700px) {
