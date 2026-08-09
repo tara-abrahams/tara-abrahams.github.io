@@ -257,7 +257,7 @@ a:hover {
 }
 
 section {
-  padding-block: clamp(var(--space-12), 8vw, var(--space-24));
+  padding-block: clamp(3.5rem, 9vw, 7rem);
 }
 
 .section-label {
@@ -275,7 +275,7 @@ section {
   font-size: var(--text-xl);
   font-weight: 400;
   color: var(--color-text);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
   line-height: 1.2;
 }
 
@@ -747,7 +747,7 @@ body.mobile-nav-open {
   font-size: var(--text-base);
   line-height: 1.75;
   color: var(--color-text);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
   max-width: 65ch;
 }
 
@@ -1260,7 +1260,7 @@ body.mobile-nav-open {
 }
 
 .cv-section {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-12);
 }
 
 .cv-section:last-child {
@@ -1283,7 +1283,7 @@ body.mobile-nav-open {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: var(--space-2) var(--space-6);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
 .cv-entry:last-child {
@@ -1301,6 +1301,7 @@ body.mobile-nav-open {
 
 .cv-entry-org {
   font-size: var(--text-sm);
+  font-weight: 600;
   color: var(--color-text-muted);
   grid-column: 1;
   margin-top: var(--space-1);
@@ -1426,6 +1427,13 @@ body.mobile-nav-open {
   font-size: var(--text-sm);
   font-weight: 500;
   color: var(--color-text);
+}
+
+/* Inline email mention within the contact intro paragraph — make it read as
+   an immediate, prominent action rather than plain body-copy link. */
+.contact-inline-email {
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* ============================================================
